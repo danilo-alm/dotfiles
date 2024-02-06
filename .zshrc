@@ -18,8 +18,6 @@ plugins=(
   git
   git-commit
   history
-  aliases
-  common-aliases
   command-not-found
 )
 
