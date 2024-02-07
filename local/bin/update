@@ -1,0 +1,8 @@
+
+if [[ "$EUID" != 0 ]]; then
+    echo "run as root!"
+    exit
+fi
+
+pacman -Syu
+SKIP_AUTOSNAP= paru -Sua
