@@ -178,6 +178,14 @@
 		"tooltip": false
 	},
 
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+
 	"tray": {
 		"icon-size": 18
 		//"spacing": 10

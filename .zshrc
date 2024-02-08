@@ -22,16 +22,16 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/aliases.zsh
+source ~/.aliases.zsh
 
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR='vim'
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zoxide.zsh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
