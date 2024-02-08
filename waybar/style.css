@@ -77,7 +77,7 @@
 #memory,
 #mode,
 #network,
-#wireplumber,
+#pulseaudio,
 #temperature,
 #tray,
 #backlight,
@@ -162,7 +162,7 @@
 	margin-left: 35pt;
 }
 
-#wireplumber {
+#pulseaudio {
 	background: @sound;
 	color: @black;
 }

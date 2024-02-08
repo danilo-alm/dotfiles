@@ -13,4 +13,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("danilo.plugins")
+require("lazy").setup({
+	{
+		import = 'danilo.plugins'
+	},
+	{
+		import = 'danilo.plugins.lsp'
+	},
+})

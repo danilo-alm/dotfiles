@@ -12,7 +12,7 @@
 		"custom/arrow11",
         "bluetooth",
 		"custom/arrow9",
-        "wireplumber",
+        "pulseaudio",
 		"custom/arrow8",
 		"network",
 		"custom/arrow7",
@@ -152,7 +152,7 @@
 		"format": "{name}"
 	},
 
-    "wireplumber": {
+    "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-muted": "",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
