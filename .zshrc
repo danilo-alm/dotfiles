@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
 
 export PATH=$PATH:$HOME/.local/bin
-export EDITOR='vim'
+export EDITOR='nvim'
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'

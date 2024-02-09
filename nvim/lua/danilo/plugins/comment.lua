@@ -5,9 +5,9 @@ return {
 		require('Comment').setup({
 			toggler = {
 				---Line-comment toggle keymap
-				line = '<leader>cc',
+				line = '<leader>gc',
 				---Block-comment toggle keymap
-				block = '<leader>cb',
+				block = '<leader>gb',
 			},
 		})
 	end

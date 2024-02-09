@@ -28,9 +28,11 @@ return {
 	    dotfiles = true,
 	  },
 	})
-    keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>", { desc = " Open the tree if it is closed, and then focus on the tree." })
-    keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
-    keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+    keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>")
+    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>")
+    keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")
+    keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>")
+    keymap.set("n", "<C-Left>", "<cmd>NvimTreeResize -5<CR>")
+    keymap.set("n", "<C-Right>", "<cmd>NvimTreeResize +5<CR>")
   end,
 }

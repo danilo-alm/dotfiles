@@ -20,4 +20,5 @@ require("lazy").setup({
 	{
 		import = 'danilo.plugins.lsp'
 	},
+	checker = { enabled = true, frequency = 86400 }
 })

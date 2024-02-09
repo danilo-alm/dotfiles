@@ -3,6 +3,11 @@ return {
 	lazy = true,
 	config = function()
 		vim.cmd("TSUpdate")
+
+		vim.opt.foldmethod = "expr"
+		vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+		vim.opt.foldenable = false  -- Disable folding at startup.
+
 		require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "java", "javascript", "typescript", "bash",
@@ -24,6 +29,9 @@ return {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  }
 }
 	end
 }

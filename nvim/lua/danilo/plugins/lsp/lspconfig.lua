@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  -- event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp", -- completion source
     { "antosha417/nvim-lsp-file-operations", config = true },
@@ -100,10 +100,10 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["jdtls"].setup({
+    --[[ lspconfig["jdtls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-    })
+    }) ]]
 
     lspconfig["docker_compose_language_service"].setup({
       capabilities = capabilities,
