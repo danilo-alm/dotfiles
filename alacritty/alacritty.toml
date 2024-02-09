@@ -1,7 +1,7 @@
 
 [font]
 #normal = { family = "MesloLGSDZ Nerd Font Mono", style = "Regular" }
-normal = { family = "JetBrainsMonoNL", style = "Regular" }
+normal = { family = "JetBrainsMono", style = "Regular" }
 size = 12
 
 [window]
