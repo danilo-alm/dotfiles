@@ -45,3 +45,5 @@ set shiftwidth=0
 set expandtab
 
 set wrap
+
+set term=kitty

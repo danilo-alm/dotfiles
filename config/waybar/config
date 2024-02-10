@@ -3,9 +3,9 @@
 	"position": "top",
 
 	"modules-left": [
-		"sway/workspaces",
+		"hyprland/workspaces",
 		"custom/arrow10",
-		"sway/window"
+		"hyprland/window"
 	],
 
 	"modules-right": [
@@ -24,7 +24,7 @@
 		"custom/arrow4",
 		"battery",
 		"custom/arrow3",
-		"sway/language",
+		"hyprland/language",
 		"custom/arrow2",
 		"tray",
 		"clock#date",
@@ -101,10 +101,10 @@
 		}
 	},
 
-	"sway/language": {
+	"hyprland/language": {
 		"format": " {}",
 		"min-length": 5,
-		//"on-click": "swaymsg 'input * xkb_switch_layout next'",
+		//"on-click": "hyprlandmsg 'input * xkb_switch_layout next'",
 		"tooltip": false
 	},
 
@@ -139,13 +139,13 @@
         "on-click-middle": "blueman-manager"
     },
 
-	"sway/window": {
+	"hyprland/window": {
 		"format": "{}",
 		"max-length": 30,
 		"tooltip": false
 	},
 
-	"sway/workspaces": {
+	"hyprland/workspaces": {
 		"disable-scroll-wraparound": true,
 		"smooth-scrolling-threshold": 4,
 		"enable-bar-scroll": true,

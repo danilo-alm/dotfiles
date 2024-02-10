@@ -28,4 +28,6 @@ vim.opt.colorcolumn = {80, 120}
 
 vim.opt.updatetime = 300
 
+vim.g.term = "kitty"
+
 vim.g.mapleader = " "
