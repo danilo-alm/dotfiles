@@ -25,7 +25,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases.zsh
 
 export PATH=$PATH:$HOME/.local/bin
-export EDITOR='nvim'
+export EDITOR='vim'
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
