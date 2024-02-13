@@ -1,4 +1,4 @@
 return {
-	"mfussenegger/nvim-jdtls",
-	event = "BufRead *.java",
+  "mfussenegger/nvim-jdtls",
+  event = "BufRead *.java",
 }

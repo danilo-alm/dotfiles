@@ -5,29 +5,31 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-	config = function()
-
+  config = function()
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-	-- optionally enable 24-bit colour
-	vim.opt.termguicolors = true
+    -- optionally enable 24-bit colour
+    vim.opt.termguicolors = true
 
-	-- OR setup with some options
-	require("nvim-tree").setup({
-	  sort = {
-	    sorter = "case_sensitive",
-	  },
-	  view = {
-	    width = 30,
-	  },
-	  renderer = {
-	    group_empty = true,
-	  },
-	  filters = {
-	    dotfiles = true,
-	  },
-	})
+    -- OR setup with some options
+    require("nvim-tree").setup({
+      sort = {
+        sorter = "case_sensitive",
+      },
+      view = {
+        width = 30,
+      },
+      renderer = {
+        group_empty = true,
+      },
+      filters = {
+        dotfiles = true,
+      },
+      git = {
+        ignore = false,
+      },
+    })
     keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>")
     keymap.set("n", "<leader>ef", "<cmd>NvimTreeFocus<CR>")
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>")

@@ -67,8 +67,8 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-	-- capabilities -> 	
-	-- on_attach -> passes keymaps to buffer
+    -- capabilities ->
+    -- on_attach -> passes keymaps to buffer
 
     lspconfig["html"].setup({
       capabilities = capabilities,
@@ -115,23 +115,23 @@ return {
       on_attach = on_attach,
     })
 
-	lspconfig["eslint"].setup({
+    lspconfig["eslint"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-	lspconfig["graphql"].setup({
+    lspconfig["graphql"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     })
 
---	lspconfig["hydra-lsp"].setup({
---      capabilities = capabilities,
---      on_attach = on_attach,
---    })
+    --	lspconfig["hydra-lsp"].setup({
+    --      capabilities = capabilities,
+    --      on_attach = on_attach,
+    --    })
 
-	lspconfig["jsonls"].setup({
+    lspconfig["jsonls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -157,4 +157,3 @@ return {
     })
   end,
 }
-

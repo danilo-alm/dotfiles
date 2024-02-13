@@ -1,18 +1,17 @@
 return {
-	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
-	dependencies = {
-		'hrsh7th/cmp-buffer', -- source for text in buffer
-		'hrsh7th/cmp-path', -- source for file system paths
-		'L3MON4D3/LuaSnip', -- snippet engine
-		'saadparwaiz1/cmp_luasnip', -- completion src for snippets
-		'rafamadriz/friendly-snippets' -- useful snippets
-	},
-	config = function()
-		local cmp = require("cmp")
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-buffer", -- source for text in buffer
+    "hrsh7th/cmp-path", -- source for file system paths
+    "L3MON4D3/LuaSnip", -- snippet engine
+    "saadparwaiz1/cmp_luasnip", -- completion src for snippets
+    "rafamadriz/friendly-snippets", -- useful snippets
+  },
+  config = function()
+    local cmp = require("cmp")
 
     local luasnip = require("luasnip")
-
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -44,5 +43,5 @@ return {
         { name = "path" }, -- file system paths
       }),
     })
-		end,
+  end,
 }

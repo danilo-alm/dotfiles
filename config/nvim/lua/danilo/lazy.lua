@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -14,11 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		import = 'danilo.plugins'
-	},
-	{
-		import = 'danilo.plugins.lsp'
-	},
-	checker = { enabled = true, frequency = 86400 }
+  {
+    import = "danilo.plugins",
+  },
+  {
+    import = "danilo.plugins.lsp",
+  },
+  checker = { enabled = true, frequency = 86400 },
 })
