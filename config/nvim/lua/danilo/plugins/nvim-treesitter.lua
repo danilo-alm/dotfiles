@@ -1,6 +1,10 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
+    build = ":TSUpdate",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
 	config = function()
 		vim.cmd("TSUpdate")
 
@@ -12,7 +16,7 @@ return {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "java", "javascript", "typescript", "bash",
   			"cmake", "csv", "css", "html", "diff", "dockerfile", "gitcommit", "git_rebase", "make", "meson",
-			"yaml", "toml", "regex", "markdown_inline" },
+			"yaml", "toml", "regex", "markdown_inline", "hyprlang" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -31,7 +35,16 @@ return {
   },
   indent = {
     enable = true
-  }
+  },
+			incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
+            scope_incremental = false,
+            node_decremental = "<bs>",
+          },
+        },
 }
 	end
 }

@@ -31,3 +31,7 @@ vim.opt.updatetime = 300
 vim.g.term = "kitty"
 
 vim.g.mapleader = " "
+
+vim.filetype.add({
+  pattern = { [".*/hyprland%.conf"] = "hyprlang" },
+})

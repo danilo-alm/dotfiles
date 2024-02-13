@@ -1,11 +1,14 @@
 return {
   "williamboman/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim", -- act as bridge to lsp
+    "williamboman/mason-lspconfig.nvim", -- bridge between mason and lsp
+	"mfussenegger/nvim-dap",
+    "jay-babu/mason-nvim-dap.nvim" -- bridge between mason and dap
   },
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
+	local mason_nvim_dap = require("mason-nvim-dap")
 
     -- enable mason and configure icons
     mason.setup({
@@ -34,13 +37,20 @@ return {
 		"bashls",
 		"gradle_ls",
 		"jsonls", -- json
-		"jdtls", -- java
 		"marksman", -- markdown
 		"sqlls", -- sql
-		"hydra_lsp" -- yaml
+		"hydra_lsp", -- yaml
+		"jdtls", -- java
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
     })
+
+	mason_nvim_dap.setup({
+		ensure_installed = {
+			"java-test",
+			"java-debug-adapter",
+		}
+	})
   end,
 }

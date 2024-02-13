@@ -125,17 +125,17 @@
 		"format-disconnected": "No connection",
 		"format-alt": " {ipaddr}/{cidr}",
 		"tooltip": false,
-        "on-click-middle": "alacritty --class floating -e nmtui"
+        "on-click-middle": "kitty --class floating -e nmtui"
 	},
 
     "bluetooth": {
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "format-disabled": "",
+        "format-disabled": " disabled",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip": false,
-        "on-click": "~/dotfiles/scripts/toggle-bluetooth.sh",
+        "on-click": "~/.config/waybar/scripts/toggle-bluetooth.sh",
         "on-click-middle": "blueman-manager"
     },
 
