@@ -8,40 +8,68 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term kitty
 set $menu kickoff
+set $filemanager thunar
 
 output * bg ~/Pictures/wallpaper.png fill
 
 output HDMI-A-1 resolution 1920x1080 position 0,0
 output eDP-1 resolution 1920x1080 position 1920,0
+workspace 10 output eDP-1
+
+#
+# Execs
+#
+exec swaymsg "workspace 2; exec firefox;"
+exec swaymsg "workspace 1; exec kitty;"
+exec swaymsg "workspace 4; exec spotify;"
 
 exec swayidle -w timeout 120 'swaylock -f -c 000000' \
             timeout 200 'swaymsg output * power off' \
             resume 'swaymsg output * power on' \
             timeout 900 'systemctl suspend' \
             before-sleep 'swaylock -f -c 000000' &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec playerctld daemon
+exec swayosd-server
+exec dunst
+exec wl-paste -t text --watch clipman store --no-persist
 
-### Input configuration
 #
-# Example configuration:
+# Input configuration
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+	input type:touchpad {
+	   tap enabled
+	   natural_scroll enabled
+	   middle_emulation enabled
+       accel_profile flat
+       pointer_accel 0.8
+	}
 
-gaps inner 10
+	input type:keyboard {
+		repeat_delay 200  
+		xkb_numlock enabled
+	}
+
+	input "9610:73:BY_Tech_Gaming_Keyboard" {
+		xkb_layout us,br
+		xkb_options grp:win_space_toggle
+	}
+
+	input "1:1:AT_Translated_Set_2_keyboard" {
+		xkb_layout br(thinkpad)
+	}
+
+    input "1386:890:Wacom_One_by_Wacom_S_Pen" {
+        map_to_output HDMI-A-1
+        left_handed enabled
+    }
+
+gaps inner 5
 gaps outer 5
-default_border none
+default_border pixel 2
 default_floating_border none
-font pango:monospace 0
-titlebar_padding 1
 titlebar_border_thickness 0
 
 ### Key bindings
@@ -50,6 +78,7 @@ titlebar_border_thickness 0
 #
     # Start a terminal
     bindsym $mod+q exec $term
+    bindsym $mod+t exec $filemanager
 
     # Kill focused window
     bindsym $mod+c kill
@@ -57,12 +86,9 @@ titlebar_border_thickness 0
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
+
+    bindsym Mod4+l exec swaylock -f -c 000000
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -93,6 +119,11 @@ titlebar_border_thickness 0
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+#
+# Mouse
+#
+    #bindsym exec notify-send hi!
 #
 # Workspaces:
 #
@@ -120,6 +151,24 @@ titlebar_border_thickness 0
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+#
+# Media
+#
+    bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise --max-volume 120 
+    bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume lower
+    bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+    bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+    bindsym --release Caps_Lock exec swayosd-client --caps-lock
+    bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+    bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
+
+    bindsym --locked XF86AudioPlay exec playerctl play-pause
+    bindsym --locked ctrl+m exec playerctl play-pause
+    bindsym --locked XF86AudioNext exec playerctl next
+    bindsym --locked XF86AudioPrev exec playerctl previous
+	bindsym print exec slurp | grim -g - $(xdg-user-dir PICTURES)/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+	bindsym ctrl+print exec grim $(xdg-user-dir PICTURES)/screenshots/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+
 #
 # Layout stuff:
 #
@@ -160,16 +209,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 25px
+    bindsym $down resize grow height 25px
+    bindsym $up resize shrink height 25px
+    bindsym $right resize grow width 25px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 25px
+    bindsym Down resize grow height 25px
+    bindsym Up resize shrink height 25px
+    bindsym Right resize grow width 25px
 
     # Return to default mode
     bindsym Return mode "default"

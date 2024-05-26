@@ -1,7 +1,7 @@
 
 alias suspend="systemctl suspend"
 
-alias hyprconf="nvim ~/.config/hypr/hyprland.conf"
+alias swconf="nvim ~/.config/sway/config"
 alias v="nvim"
 alias cd="z"
 
@@ -12,5 +12,3 @@ alias du="du -h"
 
 alias mkdir="mkdir -p"
 alias trash="send2trash"
-
-alias dnfcu="dnf check-update"
