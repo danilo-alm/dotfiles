@@ -1,4 +1,8 @@
-profile dual-monitor-default {
-    output HDMI-A-1 mode 1920x1080 position 0,0 scale 1
-    output eDP-1 mode 1920x1080 position 1920,0 scale 1
+profile one-monitor {
+    output eDP-1 enable mode 1920x1080 position 0,0 scale 1
+}
+
+profile hdmi-only  {
+    output HDMI-A-1 enable mode 1920x1080 position 0,0 scale 1
+    output eDP-1 disable
 }

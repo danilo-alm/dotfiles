@@ -12,3 +12,5 @@ alias du="du -h"
 
 alias mkdir="mkdir -p"
 alias trash="send2trash"
+
+alias open="xdg-open"

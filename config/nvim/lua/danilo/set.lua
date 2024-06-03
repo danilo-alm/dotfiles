@@ -16,7 +16,7 @@ vim.opt.scrolloff = 8
 
 vim.opt.wrap = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true -- During search
 vim.opt.smartcase = true -- Ignore previous if letter is capital

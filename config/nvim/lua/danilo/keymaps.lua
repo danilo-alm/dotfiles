@@ -28,9 +28,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Exit insert mode with ctrl c
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
 -- Disable ex mode
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -53,3 +50,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
+
+vim.keymap.set("n", "<leader>*", ":<C-u>let @/ = expand('<cword>')<cr>") 
