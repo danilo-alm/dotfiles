@@ -42,5 +42,6 @@ return {
         command! MagmaInitCSharp lua MagmaInitCSharp()
         command! MagmaInitFSharp lua MagmaInitFSharp()
       ]]
+       -- require('magma-nvim').setup()
 	end
 }
