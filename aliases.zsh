@@ -14,3 +14,4 @@ alias mkdir="mkdir -p"
 alias trash="send2trash"
 
 alias open="xdg-open"
+alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"

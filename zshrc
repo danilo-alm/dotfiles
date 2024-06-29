@@ -5,6 +5,8 @@ fi
 export ZSH=/usr/share/oh-my-zsh/
 export PATH=$PATH:$HOME/.local/bin
 export EDITOR='vim'
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 ZSH_THEME=
 CASE_SENSITIVE="false"
@@ -33,3 +35,12 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		\cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
