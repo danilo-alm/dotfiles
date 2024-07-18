@@ -19,7 +19,6 @@ plugins=(
   git
   git-commit
   history
-  command-not-found
   dnf
 )
 
@@ -27,6 +26,7 @@ source ~/.aliases.zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/doc/pkgfile/command-not-found.zsh
 zstyle ':omz:update' mode disabled  # disable automatic updates
 
 eval "$(zoxide init zsh)"
