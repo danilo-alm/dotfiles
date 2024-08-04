@@ -1,0 +1,2 @@
+set $set_vol "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@"
+set $get_vol ../scripts/get_volume.sh

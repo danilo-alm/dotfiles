@@ -19,7 +19,6 @@ plugins=(
   git
   git-commit
   history
-  dnf
 )
 
 source ~/.aliases.zsh
