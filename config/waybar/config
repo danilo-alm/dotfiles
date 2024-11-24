@@ -2,9 +2,9 @@
 	"layer": "bottom",
 	"position": "top",
 	"modules-left": [
-		"sway/workspaces",
+		"hyprland/workspaces",
 		"custom/arrow10",
-		"sway/window"
+		"hyprland/window"
 	],
 	"modules-right": [
 		"idle_inhibitor",
@@ -25,7 +25,7 @@
 		"custom/arrow4",
 		"battery",
 		"custom/arrow3",
-		"sway/language",
+		"hyprland/language",
 		"custom/arrow2",
 		"tray",
 		"clock#date",
@@ -111,10 +111,12 @@
 			"critical": 90
 		}
 	},
-	"sway/language": {
+	"hyprland/language": {
 		"format": " {}",
+        "format-en": "en",
+        "format-pt": "pt",
 		"min-length": 5,
-		"on-click": "swaymsg 'input * xkb_switch_layout next'",
+		"on-click": "hyprlandmsg 'input * xkb_switch_layout next'",
 		"tooltip": false
 	},
 	"memory": {
@@ -145,12 +147,12 @@
 		"on-click": "~/.config/waybar/scripts/toggle-bluetooth.sh",
 		"on-click-middle": "blueman-manager"
 	},
-	"sway/window": {
+	"hyprland/window": {
 		"format": "{}",
 		"max-length": 30,
 		"tooltip": false
 	},
-	"sway/workspaces": {
+	"hyprland/workspaces": {
 		"disable-scroll-wraparound": true,
 		"smooth-scrolling-threshold": 1,
 		"enable-bar-scroll": true,
