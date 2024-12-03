@@ -278,7 +278,7 @@
 #custom-arrow11 {
   font-size: 11pt;
   color: @bluetooth;
-  background: @layout;
+  background: none;
 }
 
 #custom-arrow10 {

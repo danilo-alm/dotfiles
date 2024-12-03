@@ -15,4 +15,8 @@ alias trash="send2trash"
 
 alias open="xdg-open"
 alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"
-alias hypr="nvim ~/.config/hypr/hyprland.conf"
+alias hypr="vim .config/hypr/hyprland.conf.d/"
+alias mon="vim ~/.config/hypr/hyprland.conf.d/11-monitors.conf"
+alias monitors="vim ~/.config/hypr/hyprland.conf.d/11-monitors.conf"
+alias mond='hyprctl keyword monitor "eDP-1, disable"'
+alias mone='hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"'
