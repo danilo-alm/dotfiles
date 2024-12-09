@@ -116,7 +116,7 @@
         "format-en": "en",
         "format-pt": "pt",
 		"min-length": 5,
-		"on-click": "hyprlandmsg 'input * xkb_switch_layout next'",
+        "on-click": "hyprctl switchxkblayout current next",
 		"tooltip": false
 	},
 	"memory": {
@@ -154,7 +154,6 @@
 	},
 	"hyprland/workspaces": {
 		"disable-scroll-wraparound": true,
-		"smooth-scrolling-threshold": 1,
 		"enable-bar-scroll": true,
 		"format": "{name}"
 	},
