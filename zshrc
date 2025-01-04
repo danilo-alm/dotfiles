@@ -43,3 +43,5 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+source ~/.atuin.zsh

@@ -20,3 +20,4 @@ alias mon="vim ~/.config/hypr/hyprland.conf.d/11-monitors.conf"
 alias monitors="vim ~/.config/hypr/hyprland.conf.d/11-monitors.conf"
 alias mond='hyprctl keyword monitor "eDP-1, disable"'
 alias mone='hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"'
+alias wifi-login="io.elementary.capnet-assist"
