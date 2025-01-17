@@ -7,6 +7,7 @@ export PATH=$PATH:$HOME/.local/bin
 export EDITOR='vim'
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+export MAKEFLAGS="--jobs=$(nproc)"
 
 ZSH_THEME=
 CASE_SENSITIVE="false"
