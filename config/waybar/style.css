@@ -60,7 +60,8 @@
 
 /* The whole bar */
 #waybar {
-  background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
+  /* background: rgba(40, 40, 40, 0.8784313725); #282828e0 */
+  background: rgba(20, 20, 20, 0.8784313725);
   color: @white;
   font-family:
     JetBrains Mono,
@@ -278,7 +279,7 @@
 #custom-arrow11 {
   font-size: 11pt;
   color: @bluetooth;
-  background: none;
+  background: @layout;
 }
 
 #custom-arrow10 {

@@ -8,8 +8,8 @@
 	],
 	"modules-right": [
 		"idle_inhibitor",
-		//"custom/arrow12",
-		//"custom/mediaplayer",
+		"custom/arrow12",
+		"custom/mediaplayer",
 		"custom/arrow11",
 		"bluetooth",
 		"custom/arrow9",
