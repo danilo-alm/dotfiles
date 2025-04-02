@@ -37,9 +37,9 @@
 		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --player spotify",
 		"format": "{}",
 		"return-type": "json",
-		"on-click": "playerctl play-pause",
-		"on-scroll-up": "playerctl next",
-		"on-scroll-down": "playerctl previous"
+		"on-click": "playerctl --player=spotify play-pause",
+		"on-scroll-up": "playerctl --player=spotify next",
+		"on-scroll-down": "playerctl --player=spotify previous"
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
@@ -123,10 +123,10 @@
 		"interval": 5,
 		"format": " {used:0.1f}G/{total:0.1f}G",
 		"states": {
-			"warning": 70,
 			"critical": 90
 		},
-		"tooltip": false
+		"tooltip": true,
+        "tooltip-format": "Swap: {swapPercentage}%"
 	},
 	"network": {
 		"interval": 5,

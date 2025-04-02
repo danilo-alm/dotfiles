@@ -67,6 +67,8 @@ class PlayerManager:
     def write_output(self, text, player):
         if len(text) > 30:
             text = text[:30] + "..."
+        else:
+            text = text + " "
         logger.debug(f"Writing output: {text}")
 
         output = {"text": text,

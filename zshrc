@@ -3,11 +3,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH=/usr/share/oh-my-zsh/
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR='vim'
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export MAKEFLAGS="--jobs=$(nproc)"
+export npm_config_prefix="$HOME/.local"
 
 ZSH_THEME=
 CASE_SENSITIVE="false"
