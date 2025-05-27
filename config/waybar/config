@@ -34,7 +34,7 @@
 	],
 	// Modules
 	"custom/mediaplayer": {
-		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --player spotify",
+		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave",
 		"format": "{}",
 		"return-type": "json",
 		"on-click": "playerctl --player=spotify play-pause",
@@ -167,7 +167,7 @@
 			"",
 			""
 		],
-		"max-volume": 140,
+		"max-volume": 200,
 		"scroll-step": 5.0,
 		"tooltip": false
 	},

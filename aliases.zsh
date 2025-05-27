@@ -23,3 +23,12 @@ alias mone='hyprctl keyword monitor "eDP-1, preferred, 0x0, 1"'
 alias wifi-login="io.elementary.capnet-assist"
 alias za="zathura"
 alias neo="neo-matrix"
+
+alias drop-caches='sudo paccache -rk3; paru -Sc --aur --noconfirm'
+alias update-all='export TMPFILE="$(mktemp)"; \
+    sudo true; \
+    rate-mirrors --save=$TMPFILE arch --max-delay=21600 \
+      && sudo mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist-backup \
+      && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
+      && drop-caches \
+      && paru -Syyu'
