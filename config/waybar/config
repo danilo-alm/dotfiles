@@ -34,7 +34,7 @@
 	],
 	// Modules
 	"custom/mediaplayer": {
-		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave",
+		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave,chromium",
 		"format": "{}",
 		"return-type": "json",
 		"on-click": "playerctl --player=spotify play-pause",
@@ -155,7 +155,19 @@
 	"sway/workspaces": {
 		"disable-scroll-wraparound": true,
 		"enable-bar-scroll": true,
-		"format": "{name}"
+		"format": "{icon}",
+        "persistent-workspaces": {
+            "*":[1,2,3,4,5,6,7,8,9]
+        },
+        "format-icons": {
+          "1": "",
+          "2": "󰈹",
+          "3": "",
+          "torrent": "",
+          "file-manager": "",
+          "music": "",
+          "extra": "",
+        }
 	},
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
@@ -172,7 +184,7 @@
 		"tooltip": false
 	},
 	"temperature": {
-		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
 		"critical-threshold": 90,
 		"interval": 5,
 		"format": "{icon} {temperatureC}°",
