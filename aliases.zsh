@@ -32,3 +32,5 @@ alias update-all='export TMPFILE="$(mktemp)"; \
       && sudo mv $TMPFILE /etc/pacman.d/mirrorlist \
       && drop-caches \
       && paru -Syyu'
+
+alias poweroff="systemctl poweroff"

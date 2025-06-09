@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 STATE=`bluetoothctl show | grep Powered | awk '{print $2}'`
 if [[ $STATE == 'yes' ]]; then    

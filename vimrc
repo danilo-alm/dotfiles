@@ -35,7 +35,7 @@ set showmatch
 " Use highlighting when doing a search.
 set hlsearch
 
-set mouse=a
+" set mouse=a
 
 " Indentation
 set tabstop=4
