@@ -64,8 +64,7 @@
   background: rgba(20, 20, 20, 0.8784313725);
   color: @white;
   font-family:
-    JetBrains Mono,
-    Siji;
+    "JetBrains Mono Nerd Font";
   font-size: 10pt;
   /*font-weight: bold;*/
 }
