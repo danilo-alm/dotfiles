@@ -1,23 +1,18 @@
 #!/usr/bin/env bash
 
-LOCKFILE=/tmp/empty-ws-launcher.lock
-exec 200>"$LOCKFILE"            # open fd 200 → lockfile
-flock -n 200 || { echo "Another instance is running."; exit 1; }
-
-# ensure that when we exit or get killed, fd 200 is closed (releasing the lock)
-trap 'exec 200>&-; exit' INT TERM EXIT
-
 declare -A ws_actions=(
   ["1"]="kitty"
   ["2"]="firefox"
   ["music"]="spotify"
   ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
+  ["extra"]="kitty ~/"
+  ["file-manager"]="thunar"
 )
 
 last_ws=""
 last_time=0
-debounce_interval=1  # seconds
+debounce_interval=2  # seconds
 
 exec 3< <(swaymsg -m -t subscribe '["workspace"]' | jq -c --unbuffered '.')
 

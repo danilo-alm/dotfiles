@@ -2,6 +2,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+=~/.zsh/completions
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+autoload -U compinit && compinit
+
 export ZSH=~/.oh-my-zsh/
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -10,12 +17,6 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export MAKEFLAGS="--jobs=$(nproc)"
 export npm_config_prefix="$HOME/.local"
-
-# asdf
-# append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
