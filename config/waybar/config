@@ -121,7 +121,7 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": " {used:0.1f}G/{total:0.1f}G",
+		"format": "󰍛 {used:0.1f}G/{total:0.1f}G",
 		"states": {
 			"critical": 90
 		},
@@ -162,15 +162,16 @@
         "format-icons": {
           "1": "",
           "2": "󰈹",
-          "3": "",
+          "3": "󰨞",
           "torrent": "",
-          "file-manager": "",
+          "file-manager": "",
           "music": "",
           "extra": "",
+          "notes": ""
         }
 	},
 	"pulseaudio": {
-		"format": "{volume}% {icon}",
+		"format": "{icon} {volume}%",
 		"format-muted": "",
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"on-click-middle": "pavucontrol",
@@ -178,10 +179,6 @@
 			"",
 			"",
 			""
-            
-			//"",
-			//"",
-			//""
 		],
 		"max-volume": 200,
 		"scroll-step": 5.0,
