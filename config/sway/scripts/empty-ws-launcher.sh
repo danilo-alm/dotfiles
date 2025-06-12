@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 declare -A ws_actions=(
-  ["1"]="kitty"
-  ["2"]="firefox"
-  ["music"]="spotify"
+  ["d*"]="kitty"
+  ["w*"]="firefox"
+  ["e*"]="thunar"
+  ["x0"]="spotify"
   ["notes"]="~/Applications/Obsidian*"
   ["torrent"]="qbittorrent"
-  ["extra"]="kitty ~/"
-  ["file-manager"]="thunar"
 )
 
 last_ws=""
@@ -29,15 +28,28 @@ while IFS= read -r -u 3 _event; do
 
   now=$(date +%s)
 
-  if [[ -n "$focused_empty_ws" ]] \
-     && [[ -n "${ws_actions[$focused_empty_ws]}" ]] \
-     && { [[ "$focused_empty_ws" != "$last_ws" ]] || (( now - last_time >= debounce_interval )); }
-  then
-    cmd="${ws_actions[$focused_empty_ws]}"
-    echo "Empty workspace \"$focused_empty_ws\" → launching: $cmd"
-    sh -c "$cmd" &
-    last_ws="$focused_empty_ws"
-    last_time=$now
+  if [[ -n "$focused_empty_ws" ]] && { [[ "$focused_empty_ws" != "$last_ws" ]] || (( now - last_time >= debounce_interval )); }; then
+
+    matched_cmd=""
+
+    # First try exact match
+    if [[ -n "${ws_actions[$focused_empty_ws]}" ]]; then
+      matched_cmd="${ws_actions[$focused_empty_ws]}"
+    else
+      # Try glob patterns
+      for pattern in "${!ws_actions[@]}"; do
+        if [[ "$focused_empty_ws" == $pattern ]]; then
+          matched_cmd="${ws_actions[$pattern]}"
+          break
+        fi
+      done
+    fi
+
+    if [[ -n "$matched_cmd" ]]; then
+      echo "Empty workspace \"$focused_empty_ws\" → launching: $matched_cmd"
+      sh -c "$matched_cmd" &
+      last_ws="$focused_empty_ws"
+      last_time=$now
+    fi
   fi
 done
-
