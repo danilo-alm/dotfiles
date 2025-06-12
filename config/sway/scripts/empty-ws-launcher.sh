@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 declare -A ws_actions=(
   ["d*"]="kitty"
   ["w*"]="firefox"
   ["e*"]="thunar"
   ["x0"]="spotify"
+  ["z0"]="/usr/bin/firefox --name='Whatsapp' --no-remote -P 'FTWA' 'https://web.whatsapp.com/'"
   ["notes"]="~/Applications/Obsidian*"
   ["torrent"]="qbittorrent"
 )
