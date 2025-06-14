@@ -46,4 +46,5 @@ set expandtab
 
 set wrap
 
-set term=kitty
+"set term=kitty
+

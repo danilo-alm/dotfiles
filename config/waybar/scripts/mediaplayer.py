@@ -65,8 +65,8 @@ class PlayerManager:
         return self.manager.props.players
 
     def write_output(self, text, player):
-        if len(text) > 30:
-            text = text[:30] + "..."
+        if len(text) > 24:
+            text = text[:21] + "..."
         else:
             text = text + " "
         logger.debug(f"Writing output: {text}")
