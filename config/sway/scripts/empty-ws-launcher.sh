@@ -48,7 +48,7 @@ while IFS= read -r -u 3 _event; do
 
     if [[ -n "$matched_cmd" ]]; then
       echo "Empty workspace \"$focused_empty_ws\" → launching: $matched_cmd"
-      sh -c "$matched_cmd" &
+      sway exec "$matched_cmd" 
       last_ws="$focused_empty_ws"
       last_time=$now
     fi

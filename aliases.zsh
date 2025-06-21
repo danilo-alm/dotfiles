@@ -33,3 +33,4 @@ alias update-all='export TMPFILE="$(mktemp)"; \
       && paru -Syyu'
 
 alias poweroff="systemctl poweroff"
+alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland"
