@@ -9,7 +9,7 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 autoload -U compinit && compinit
 
-export ZSH=~/.oh-my-zsh/
+export ZSH=/usr/share/oh-my-zsh/
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export EDITOR='vim'
@@ -18,7 +18,7 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export MAKEFLAGS="--jobs=$(nproc)"
 export npm_config_prefix="$HOME/.local"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
@@ -33,8 +33,9 @@ plugins=(
 
 source ~/.aliases.zsh
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # source /usr/share/command-not-found/command-not-found
 zstyle ':omz:update' mode disabled  # disable automatic updates
 
