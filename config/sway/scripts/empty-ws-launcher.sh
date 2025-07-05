@@ -4,9 +4,9 @@ declare -A ws_actions=(
   ["d*"]="kitty"
   ["w*"]="firefox"
   ["e*"]="thunar"
-  ["x0"]="spotify"
+  ["x0"]="spotify-launcher"
   ["z0"]="/usr/bin/firefox --name='Whatsapp' --no-remote -P 'FTWA' 'https://web.whatsapp.com/'"
-  ["notes"]="~/Applications/Obsidian*"
+  ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
 )
 
