@@ -1,0 +1,10 @@
+
+if [[ "$EUID" == 0 ]]; then
+    echo "do not run as root!"
+    exit
+fi
+
+sudo pacman -Syu
+
+export SKIP_AUTOSNAP=
+paru -Sua

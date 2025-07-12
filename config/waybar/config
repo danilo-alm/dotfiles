@@ -1,0 +1,263 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"modules-left": [
+		"sway/workspaces",
+		"custom/arrow10",
+		"sway/window"
+	],
+	"modules-right": [
+		"idle_inhibitor",
+		"custom/arrow12",
+		"custom/mediaplayer",
+		"custom/arrow11",
+		"bluetooth",
+		"custom/arrow9",
+		"wireplumber",
+		"custom/arrow8",
+		"network",
+		"custom/arrow7",
+		"memory",
+		"custom/arrow6",
+		"cpu",
+		"custom/arrow5",
+		"temperature",
+		"custom/arrow4",
+		"battery",
+		"custom/arrow3",
+		"sway/language",
+		"custom/arrow2",
+		"tray",
+		"clock#date",
+		"custom/arrow1",
+		"clock#time"
+	],
+	// Modules
+	"custom/mediaplayer": {
+		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave,chromium",
+		"format": "{}",
+		"return-type": "json",
+		"on-click": "playerctl --player=spotify play-pause",
+		"on-scroll-up": "playerctl --player=spotify next",
+		"on-scroll-down": "playerctl --player=spotify previous"
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"battery": {
+		"interval": 10,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-time": "{H}:{M:02}",
+		"format": "{icon} {capacity}% ({time})",
+		"format-charging": " {capacity}% ({time})",
+		"format-charging-full": " {capacity}%",
+		"format-full": "{icon} {capacity}%",
+		"format-alt": "{icon} {power}W",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	},
+	"clock#time": {
+		"interval": 10,
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#date": {
+		"format": "{:%e %b %Y}",
+		"interval": 20,
+		"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"on-click-right": "mode",
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"cpu": {
+		"interval": 5,
+		"tooltip": false,
+		"format": "󰍛 {usage}%",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+	"sway/language": {
+		"format": " {}",
+        "format-en": "en",
+        "format-pt": "pt",
+		"min-length": 5,
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"tooltip": false
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {used:0.1f}G/{total:0.1f}G",
+		"states": {
+			"critical": 90
+		},
+		"tooltip": true,
+        "tooltip-format": "Swap: {swapPercentage}%"
+	},
+	"network": {
+		"interval": 5,
+		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-ethernet": " {ifname}",
+		"format-disconnected": "No connection",
+		"format-alt": " {ipaddr}/{cidr}",
+		"tooltip": false,
+		"on-click-middle": "kitty --class floating -e nmtui"
+	},
+	"bluetooth": {
+		"format": " {status}",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		"format-disabled": " disabled",
+		// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+		"tooltip": false,
+		"on-click": "~/.config/waybar/scripts/toggle-bluetooth.sh",
+		"on-click-middle": "blueman-manager"
+	},
+	"sway/window": {
+		"format": "{}",
+		"max-length": 30,
+		"tooltip": false
+	},
+	"sway/workspaces": {
+		"disable-scroll-wraparound": true,
+		"enable-bar-scroll": true,
+		"format": " {icon} ",
+        "format-icons": {
+          "d1": "1",
+          "d2": "2",
+          "d3": "3",
+          "d4": "4",
+
+          "w1": "1󰈹",
+          "w2": "2󰈹",
+          "w3": "3󰈹",
+          "w4": "4󰈹",
+
+          "s1": "1󰨞",
+          "s2": "2󰨞",
+          "s3": "3󰨞",
+          "s4": "4󰨞",
+
+          "e1": "1",
+          "e2": "2",
+          "e3": "3",
+          "e4": "4",
+
+          "x0": "",
+          "z0": "",
+
+          "torrent": "",
+          "notes": ""
+        }
+	},
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "max-volume": 200,
+        "scroll-step": 5,
+        "tooltip": false,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "format-icons": ["", "", ""],
+        "on-click-middle": "pavucontrol"
+    },
+	"temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+		"critical-threshold": 90,
+		"interval": 5,
+		"format": "{icon} {temperatureC}°",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	},
+	"tray": {
+		"icon-size": 18,
+		"spacing": 10
+	},
+	"custom/arrow1": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow2": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow3": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow4": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow5": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow6": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow7": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow8": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow9": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow10": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow11": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow12": {
+		"format": "",
+		"tooltip": false
+	}
+}
+// vi:ft=jsonc

@@ -1,0 +1,39 @@
+
+[font]
+normal = { family = "MesloLGS NF" }
+size = 12
+
+[window]
+opacity = 0.85
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[colors.primary]
+background = "#000000"
+foreground = "#f1f1f1"
+
+[colors.selection]
+text = "#000000"  # selection_foreground
+background = "#b4d5ff"  # selection_background
+
+[colors.normal]
+black   = "#4f4f4f"  # color0
+red     = "#fa6c5f"  # color1
+green   = "#a8fe60"  # color2
+yellow  = "#fffeb6"  # color3
+blue    = "#96cafd"  # color4
+magenta = "#fa72fc"  # color5
+cyan    = "#c6c4fd"  # color6
+white   = "#eeedee"  # color7
+
+[colors.bright]
+black   = "#7b7b7b"  # color8
+red     = "#fcb6af"  # color9
+green   = "#ceffab"  # color10
+yellow  = "#fffecc"  # color11
+blue    = "#b5dcfe"  # color12
+magenta = "#fb9bfe"  # color13
+cyan    = "#dfdffd"  # color14
+white   = "#fefffe"  # color15
+

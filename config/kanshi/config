@@ -1,0 +1,19 @@
+profile dual-monitor-home  {
+    output eDP-1 enable mode 1920x1080 position 1920,0 scale 1
+    output "Acer Technologies SA270 0x12005313" enable mode 1920x1080@75 position 0,0 scale 1 mirror eDP-1
+}
+
+profile dual-monitor-lica  {
+    output "LG Electronics L1742 0x01010101" enable mode 1280x1024@75 position 0,0 scale 1
+    output eDP-1 enable mode 1920x1080 position 0,1024 scale 1
+}
+
+profile dual-monitor-generic  {
+    output HDMI-A-1 enable position 1920,0 scale 1
+    output eDP-1 enable mode 1920x1080 position 0,0 scale 1
+}
+
+profile one-monitor {
+    output eDP-1 enable mode 1920x1080 position 1920,0 scale 1
+}
+
