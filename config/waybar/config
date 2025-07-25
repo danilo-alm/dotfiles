@@ -34,7 +34,7 @@
 	],
 	// Modules
 	"custom/mediaplayer": {
-		"exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave,chromium",
+        "exec": "pgrep -f mediaplayer.py | grep -v $$ | xargs -r kill; /usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave,chromium",
 		"format": "{}",
 		"return-type": "json",
 		"on-click": "playerctl --player=spotify play-pause",
