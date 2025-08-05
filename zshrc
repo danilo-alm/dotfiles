@@ -12,11 +12,12 @@ autoload -U compinit && compinit
 export ZSH=~/.oh-my-zsh/
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-export EDITOR='vim'
+export EDITOR='nvim'
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export MAKEFLAGS="--jobs=$(nproc)"
 export npm_config_prefix="$HOME/.local"
+export FZF_CTRL_T_COMMAND=
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
@@ -31,6 +32,7 @@ plugins=(
   history
 )
 
+source ~/.fzf.zsh
 source ~/.aliases.zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh

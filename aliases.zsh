@@ -35,3 +35,4 @@ alias update-all='export TMPFILE="$(mktemp)"; \
 alias poweroff="systemctl poweroff"
 alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland"
 alias lo="libreoffice"
+alias yy="yazi"
