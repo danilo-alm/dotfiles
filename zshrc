@@ -12,6 +12,8 @@ autoload -U compinit && compinit
 export ZSH=~/.oh-my-zsh/
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export EDITOR='nvim'
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
