@@ -34,7 +34,7 @@
 	],
 	// Modules
 	"custom/mediaplayer": {
-        "exec": "pgrep -f mediaplayer.py | grep -v $$ | xargs -r kill; /usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --exclude firefox,brave,chromium",
+        "exec": "tail -f $HOME/.cache/waybar-media-output.log",
 		"format": "{}",
 		"return-type": "json",
 		"on-click": "playerctl --player=spotify play-pause",
@@ -161,10 +161,10 @@
           "d3": "3",
           "d4": "4",
 
-          "w1": "1󰈹",
-          "w2": "2󰈹",
-          "w3": "3󰈹",
-          "w4": "4󰈹",
+          "w1": "1",
+          "w2": "2",
+          "w3": "3",
+          "w4": "4",
 
           "s1": "1󰨞",
           "s2": "2󰨞",
