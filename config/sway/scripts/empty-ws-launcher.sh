@@ -2,10 +2,10 @@
 
 declare -A ws_actions=(
   ["d*"]="kitty"
-  ["w*"]="firefox"
+  ["w*"]="brave-browser"
   ["e*"]="thunar"
   ["x0"]="spotify"
-  ["z0"]="/usr/bin/firefox --name='Whatsapp' --no-remote -P 'FTWA' 'https://web.whatsapp.com/'"
+  ["z0"]="/usr/bin/brave-browser --app='https://web.whatsapp.com'"
   ["notes"]="flatpak run md.obsidian.Obsidian"
   ["torrent"]="qbittorrent"
 )
