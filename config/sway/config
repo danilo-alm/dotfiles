@@ -1,2 +1,5 @@
 include ~/.config/sway/config.d/*
 include /etc/sway/config.d/*
+
+include ~/.config/sway/themes/catppuccin-mocha.conf
+
