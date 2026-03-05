@@ -7,6 +7,27 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 fpath+=~/.zsh/completions
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
+# File to store agent environment variables
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+    echo "Initializing new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+}
+
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    # Check if the process ID is still running
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
 autoload -U compinit && compinit
 
 export ZSH=~/.oh-my-zsh/
@@ -15,8 +36,8 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export EDITOR='vim'
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+#export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export MAKEFLAGS="--jobs=$(nproc)"
 export npm_config_prefix="$HOME/.local"
 export FZF_CTRL_T_COMMAND=
@@ -35,10 +56,10 @@ plugins=(
 )
 
 source ~/.fzf.zsh
-source ~/.aliases.zsh
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.aliases.zsh
 # source /usr/share/command-not-found/command-not-found
 zstyle ':omz:update' mode disabled  # disable automatic updates
 

@@ -39,3 +39,8 @@ alias yy="yazi"
 
 alias ipv4="ip addr show | grep 'inet ' | grep -v '127.0.0.1' | cut -d' ' -f6 | cut -d/ -f1"
 alias ipv6="ip addr show | grep 'inet6 ' | cut -d ' ' -f6 | sed -n '2p'" 
+
+alias len='f(){ echo ${#1}; }; f'
+alias ls='eza --icons --color=auto --group-directories-first'
+alias ll='eza -l --icons --color=auto --group-directories-first'
+alias la='eza -la --icons --color=auto --group-directories-first'
