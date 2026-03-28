@@ -4,7 +4,7 @@ declare -A ws_actions=(
   ["d*"]="kitty"
   ["w*"]="brave"
   ["e*"]="thunar"
-  ["x0"]="spotify"
+  ["x0"]="spotify-launcher"
   ["z0"]="/usr/bin/brave --app='https://web.whatsapp.com'"
   ["notes"]="obsidian"
   ["torrent"]="qbittorrent"

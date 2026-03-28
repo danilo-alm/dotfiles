@@ -20,3 +20,4 @@ set -U fish_greeting
 
 abbr -a tkill 'tmux kill-session -t'
 abbr -a tka 'tmux kill-session -a'
+mise activate fish | source
