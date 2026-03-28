@@ -2,11 +2,11 @@
 
 declare -A ws_actions=(
   ["d*"]="kitty"
-  ["w*"]="brave-browser"
+  ["w*"]="brave"
   ["e*"]="thunar"
   ["x0"]="spotify"
-  ["z0"]="/usr/bin/brave-browser --app='https://web.whatsapp.com'"
-  ["notes"]="flatpak run md.obsidian.Obsidian"
+  ["z0"]="/usr/bin/brave --app='https://web.whatsapp.com'"
+  ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
 )
 
