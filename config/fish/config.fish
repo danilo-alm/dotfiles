@@ -17,6 +17,7 @@ set -x MAKEFLAGS "--jobs=(nproc)"
 set -x npm_config_prefix $HOME/.local
 set -x FZF_CTRL_T_COMMAND ""
 set -U fish_greeting
+set fish_color_autosuggestion brblack
 
 abbr -a tkill 'tmux kill-session -t'
 abbr -a tka 'tmux kill-session -a'
