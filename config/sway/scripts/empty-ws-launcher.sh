@@ -8,6 +8,7 @@ declare -A ws_actions=(
   ["z0"]="/usr/bin/brave --app='https://web.whatsapp.com'"
   ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
+  ["1data"]="dbeaver"
 )
 
 last_ws=""
