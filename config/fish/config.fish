@@ -1,7 +1,6 @@
-
 if status is-interactive
-    # Initialize zoxide for fish
     zoxide init fish | source
+    mise activate fish | source
 end
 
 set -x QT_QPA_PLATFORMTHEME qt5ct
@@ -20,4 +19,3 @@ set -U fish_greeting
 
 abbr -a tkill 'tmux kill-session -t'
 abbr -a tka 'tmux kill-session -a'
-mise activate fish | source
