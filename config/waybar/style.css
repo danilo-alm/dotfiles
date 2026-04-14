@@ -81,7 +81,6 @@
 #temperature,
 #tray,
 #backlight,
-#idle_inhibitor,
 #disk,
 #user,
 #mpris,
@@ -294,9 +293,14 @@
 }
 
 #custom-dnd {
-    padding: 0 2pt;
+    margin: 0 2pt;
+    padding: 0 1pt;
 }
 
 #custom-audio_idle_inhibitor {
+    padding: 0 10pt;
+}
+
+#idle_inhibitor {
     padding: 0 10pt;
 }
