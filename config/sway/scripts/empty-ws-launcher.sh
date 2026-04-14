@@ -5,9 +5,10 @@ declare -A ws_actions=(
   ["w*"]="brave"
   ["e*"]="thunar"
   ["x0"]="spotify-launcher"
-  ["z0"]="/usr/bin/brave --app='https://web.whatsapp.com'"
+  ["z0"]="/usr/bin/brave --disable-extensions --app='https://web.whatsapp.com'"
   ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
+  ["1data"]="dbeaver"
 )
 
 last_ws=""
