@@ -7,6 +7,7 @@
 		"sway/window"
 	],
 	"modules-right": [
+        "custom/dnd",
 		"idle_inhibitor",
 		"custom/arrow12",
 		"custom/mediaplayer",
@@ -33,6 +34,13 @@
 		"clock#time"
 	],
 	// Modules
+    "custom/dnd": {
+        "exec": "dunstctl is-paused | grep -q true && echo '󰂛' || echo '󰂚'",
+        "on-click": "dunstctl set-paused toggle && pkill -RTMIN+1 waybar",
+        "interval": "once",
+        "signal": 1,
+        "tooltip": false
+    },
 	"custom/mediaplayer": {
         "exec": "tail -f $HOME/.cache/waybar-media-output.log",
 		"format": "{}",

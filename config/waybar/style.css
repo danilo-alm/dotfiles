@@ -292,3 +292,7 @@
   color: @layout;
   background: @transparent;
 }
+
+#custom-dnd {
+    padding: 0 2pt;
+}
