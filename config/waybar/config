@@ -3,8 +3,7 @@
 	"position": "top",
 	"modules-left": [
 		"sway/workspaces",
-		"custom/arrow10",
-		"sway/window"
+		"custom/arrow10"
 	],
 	"modules-right": [
         "custom/audio_idle_inhibitor",

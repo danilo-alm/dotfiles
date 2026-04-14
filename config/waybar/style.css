@@ -73,7 +73,6 @@
 #battery,
 #clock,
 #cpu,
-#language,
 #memory,
 #mode,
 #network,
@@ -90,7 +89,7 @@
 }
 
 #language {
-  /*min-width: 115px;*/
+  padding: 0 4pt;
 }
 
 /* Each critical module */
