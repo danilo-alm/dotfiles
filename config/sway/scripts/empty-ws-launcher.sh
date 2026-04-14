@@ -2,9 +2,9 @@
 
 declare -A ws_actions=(
   ["d*"]="kitty"
-  ["w*"]="brave"
+  ["w*"]="brave-browser"
   ["e*"]="thunar"
-  ["x0"]="spotify-launcher"
+  ["x0"]="spotify"
   ["z0"]="/usr/bin/brave --disable-extensions --app='https://web.whatsapp.com'"
   ["notes"]="obsidian"
   ["torrent"]="qbittorrent"
