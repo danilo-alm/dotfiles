@@ -16,6 +16,7 @@
     frame_color = "#4287f5"
     sort = yes
     #idle_threshold = 0
+    notification_limit = 2
 
     ### Text ###
     font = Iosevka 14
