@@ -9,6 +9,7 @@ set -x QT_QPA_PLATFORMTHEME qt6ct
 set -x PATH $HOME/.local/bin $PATH
 set -x PATH $PATH /usr/local/go/bin
 set -x PATH $PATH $HOME/go/bin
+set -x PATH $PATH $HOME/miniconda3/bin
 set -x EDITOR vim
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
 set -x DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
