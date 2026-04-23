@@ -73,7 +73,6 @@
 #battery,
 #clock,
 #cpu,
-#language,
 #memory,
 #mode,
 #network,
@@ -81,17 +80,15 @@
 #temperature,
 #tray,
 #backlight,
-#idle_inhibitor,
 #disk,
 #user,
 #mpris,
 #bluetooth {
-  padding-left: 8pt;
-  padding-right: 8pt;
+  padding: 0 6pt;
 }
 
 #language {
-  /*min-width: 115px;*/
+  padding: 0 4pt;
 }
 
 /* Each critical module */
@@ -291,4 +288,17 @@
   font-size: 11pt;
   color: @layout;
   background: @transparent;
+}
+
+#custom-dnd {
+    margin: 0 2pt;
+    padding: 0 1pt;
+}
+
+#custom-audio_idle_inhibitor {
+    padding: 0 10pt;
+}
+
+#idle_inhibitor {
+    padding: 0 10pt;
 }
