@@ -38,7 +38,9 @@ alias yy="yazi"
 
 # Dev Tools
 alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland"
+alias zed="zeditor"
 
 # Git (Oh-My-Zsh style)
 alias gss="git status -s"
 alias glo="git log --oneline --graph --decorate"
+
